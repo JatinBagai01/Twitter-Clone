@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const session = require("express-session");
 const passport = require("passport");
+const port = process.env.PORT || 8000;
 
 const initializePassport = require("./config/auth");
 
@@ -28,5 +29,5 @@ app.use('/tweet', require('./routes/tweet'));
 app.use("/", require("./routes"));
 
 app.listen(process.env.PORT, () =>
-  console.log(`Server is running on port ${process.env.PORT}`)
+  console.log(`Server is running on port ${port}`)
 );
